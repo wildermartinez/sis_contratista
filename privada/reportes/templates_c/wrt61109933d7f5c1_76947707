@@ -1,0 +1,98 @@
+<?php
+/* Smarty version 3.1.36, created on 2021-08-09 02:55:47
+  from 'C:\wamp64\www\sis_contratista\privada\reportes\templates\fichas_tecnicas_personas.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.36',
+  'unifunc' => 'content_61109933d7adc6_55426178',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '4b407d2f4d1438f56c17e89dc41845b11c690a19' => 
+    array (
+      0 => 'C:\\wamp64\\www\\sis_contratista\\privada\\reportes\\templates\\fichas_tecnicas_personas.tpl',
+      1 => 1628477713,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_61109933d7adc6_55426178 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
+<html lang="esp">
+     <head>
+          <link rel="stylesheet" href="../<?php echo $_smarty_tpl->tpl_vars['direc_css']->value;?>
+" type="text/css" >
+          <meta charset="utf-8">
+          <?php echo '<script'; ?>
+ type="text/javascript" src="../../ajax.js"><?php echo '</script'; ?>
+>
+          <?php echo '<script'; ?>
+ type="text/javascript">
+            function buscar(){
+              var d1, d2, d3, d4, contenedor, ajax, url, param;
+              contenedor = document.getElementById('personas1');
+              d1 = document.formu.ap.value;
+              d2 = document.formu.am.value;
+              d3 = document.formu.nombre.value;
+              d4 = document.formu.ci.value;
+              ajax =nuevoAjax();
+              url = "ajax_buscar_persona.php"
+              param = "ap="+d1+"&am="+d2+"&nombre="+d3+"&ci"+d4;
+              //alert(param);
+              ajax.open("POST", url, true);
+              ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+              ajax.onreadystatechange = function(){
+                if (ajax.readyState == 4) {
+                  contenedor.innerHTML = ajax.responseText;
+                }
+              }
+              ajax.send(param);
+            }
+          function mostrar(id_persona){
+            var d1, ventanaCalendario;
+            //alert(id_persona);
+             ventanaCalendario= window.open("fichas_tecnicas_personas1.php?id_persona=" +d1+"calendario","width=600, height=550,left=100,top=100,scrollbars=yes,menubars=no,statusbar=NO,status=NO,resizable=YES,location=NO")
+          }
+          
+          <?php echo '</script'; ?>
+>
+     </head>
+     <body>
+       <!---------BUSCADOR-------->
+       <center>
+         <h1>FICHAS TECNICAS DE PERSONAS</h1>
+         <form action="#" method="post" name=formu>
+          <table border="1" class="listado">
+            <tr>
+              <th>
+                <b>Paterno</b><br />
+                <input type="tex" name="ap" value="" size="10" onkeyup="buscar()">
+              </th>
+              <th>
+                <b>Materno</b><br />
+                <input type="tex" name="am" value="" size="10" onkeyup="buscar()">
+              </th>
+              <th>
+                <b>Nombres</b><br />
+                <input type="tex" name="nombre" value="" size="10" onkeyup="buscar()">
+              </th>
+              <th>
+                <b>C.I</b><br />
+                <input type="tex" name="ci" value="" size="10" onkeyup="buscar()">
+              </th>
+            </tr>
+          </table>
+         </form>
+       </center>
+       <!----buscador---->
+       <center>
+         <div id="personas1">
+         </div>
+       </center>
+     </body>
+</html><?php }
+}

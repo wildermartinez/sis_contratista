@@ -1,0 +1,48 @@
+<?php
+/* Smarty version 3.1.29, created on 2021-03-31 22:58:26
+  from "C:\wamp64\www\sis_contratista\privada\templates\menu_sup.tpl" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_6064fe92498df7_29043009',
+  'file_dependency' => 
+  array (
+    '7172d2f566b2d77aecb9724303da2c1d07d9a276' => 
+    array (
+      0 => 'C:\\wamp64\\www\\sis_contratista\\privada\\templates\\menu_sup.tpl',
+      1 => 1617231501,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6064fe92498df7_29043009 ($_smarty_tpl) {
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['direc_css']->value;?>
+" type="text/css">
+</head>
+<body>
+	
+
+	<div class="cabecera">
+		<img src="../img/logos/logo_contratista.jpg" width="10%">
+		<div class="titulo">
+			SIS CONTRATISTA "<?php echo $_smarty_tpl->tpl_vars['nombre']->value;?>
+"			
+		</div>
+		<div class="usuario">
+			Usuario:<b><?php echo $_smarty_tpl->tpl_vars['sesion']->value['usuario'];?>
+</b>
+			Rol: <b><?php echo $_smarty_tpl->tpl_vars['sesion']->value['rol'];?>
+</b>
+		</div>
+	</div>
+</body>
+</html><?php }
+}
